@@ -1,0 +1,64 @@
+apply plugin: 'java-library'
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'eclipse'
+
+// JDK 8
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+// In this section you declare where to find the dependencies of your project
+repositories {
+	mavenLocal()
+    mavenCentral()
+}
+
+ext {
+	springVersion = '4.3.18.RELEASE'
+	springSecurityVersion = '4.2.7.RELEASE'
+	hibernateVersion = '4.3.11.Final'
+	ServletVersion = '3.1.0'
+	jacksonLibraryVersion = '2.9.5'
+	mysqlConnectorVersion = '8.0.11'
+}
+
+dependencies {
+    // This dependency is exported to consumers, that is to say found on their compile classpath.
+    api 'org.apache.commons:commons-math3:3.6.1'
+
+    // Use JUnit test framework
+    testImplementation 'junit:junit:4.12'
+    
+    //Spring Dependencies
+    compile	"org.springframework:spring-core:$springVersion"
+    compile	"org.springframework:spring-web:$springVersion"
+    compile	"org.springframework:spring-webmvc:$springVersion"
+	compile "org.springframework:spring-context:$springVersion"
+    compile "org.springframework:spring-tx:$springVersion"
+    compile "org.springframework:spring-orm:$springVersion"
+    
+    //Spring Security
+    compile "org.springframework.security:spring-security-core:$springSecurityVersion"
+    compile "org.springframework.security:spring-security-config:$springSecurityVersion"
+    compile "org.springframework.security:spring-security-web:$springSecurityVersion"
+    
+    //Hibernate Dependencies
+    compile "org.hibernate:hibernate-entitymanager:$hibernateVersion"
+    compile "org.hibernate:hibernate-core:$hibernateVersion"
+    
+    //mysql Connector
+    compile "mysql:mysql-connector-java:$mysqlConnectorVersion"
+    
+    //DB Connection DBCP
+    compile 'commons-dbcp:commons-dbcp:1.4'
+    
+    //Servlet Dependencies
+    compile "javax.servlet:javax.servlet-api:$ServletVersion"
+    
+    //Jackson Libraray
+    compile "com.fasterxml.jackson.core:jackson-databind:$jacksonLibraryVersion"
+    
+    //jstl
+    runtime 'javax.servlet:jstl:1.2'
+    
+}
