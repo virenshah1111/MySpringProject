@@ -5,6 +5,8 @@ package com.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -34,14 +36,14 @@ public class ToDoController {
 	private ToDoService toDoService;
 
 	@PostMapping
-	public ResponseEntity<ResponseUtil<ToDo>> save(@RequestBody ToDo toDo) {
+	public ResponseEntity<ResponseUtil<ToDo>> save(@Valid @RequestBody ToDo toDo) {
 		toDo.setUser(Util.getPrincipal());
 		toDoService.save(toDo);
 		return new ResponseEntity<>(new ResponseUtil<ToDo>("Data Saved Successfully."), HttpStatus.CREATED);
 	}
 
 	@PutMapping(path = "/{id}")
-	public ResponseEntity<ResponseUtil<List<ToDo>>> update(@PathVariable("id") List<Long> idList, @RequestBody List<ToDo> toDoList) {
+	public ResponseEntity<ResponseUtil<List<ToDo>>> update(@PathVariable("id") List<Long> idList,@Valid @RequestBody List<ToDo> toDoList) {
 		ResponseUtil<List<ToDo>> responseUtil = new ResponseUtil<>();
 		responseUtil.setData(toDoService.update(toDoList, idList));
 		responseUtil.setMessage("Data Updated Successfully");

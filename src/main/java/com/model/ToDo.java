@@ -10,6 +10,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotBlank;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -26,9 +30,12 @@ public class ToDo {
 	@GeneratedValue
 	private long id;
 
+	@NotBlank
+	@Size(max = 255)
 	@Column(name = "name", nullable = false)
 	private String name;
 
+	@NotNull
 	@Column(name = "completed", nullable = false)
 	private boolean completed;
 

@@ -7,6 +7,10 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotBlank;
 
 /**
  * @author virens
@@ -20,9 +24,12 @@ public class User {
 	@Column(name = "username", unique = true, nullable = false, length = 255)
 	private String username;
 
+	@NotBlank
+	@Size(max = 255)
 	@Column(name = "password", nullable = false, length = 255)
 	private String password;
 
+	@NotNull
 	@Column(name = "enabled", nullable = false)
 	private boolean enabled;
 
