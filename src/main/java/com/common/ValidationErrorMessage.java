@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.util;
+package com.common;
 
 /**
  * @author virens

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.util;
+package com.common;
 
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -32,12 +32,9 @@ public class Util {
 		return userName;
 	}
 
-	private static String encrypt(String str) {
+	public static String encrypt(String str) {
 		PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 		return passwordEncoder.encode(str);
 	}
 
-	public static void main(String[] args) {
-		System.out.println(encrypt("user1"));
-	}
 }

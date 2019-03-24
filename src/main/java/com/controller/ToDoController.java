@@ -21,15 +21,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.model.ToDo;
 import com.service.ToDoService;
-import com.util.ResponseUtil;
-import com.util.Util;
+import com.common.ResponseUtil;
+import com.common.Util;
 
 /**
  * @author virens
  *
  */
 @RestController
-@RequestMapping(path = "/todo")
+@RequestMapping(path = "/todos")
 public class ToDoController {
 
 	@Autowired

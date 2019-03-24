@@ -6,7 +6,7 @@ package com.exception;
 import java.util.Collections;
 import java.util.List;
 
-import com.util.ValidationErrorMessage;
+import com.common.ValidationErrorMessage;
 
 /**
  * @author virens

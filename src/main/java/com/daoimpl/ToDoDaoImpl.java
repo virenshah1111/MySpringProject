@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.dao.ToDoDao;
 import com.model.ToDo;
-import com.util.Util;
+import com.common.Util;
 
 /**
  * @author virens

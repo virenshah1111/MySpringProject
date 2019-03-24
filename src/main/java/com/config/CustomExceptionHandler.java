@@ -18,8 +18,8 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import com.exception.ValidationException;
-import com.util.ResponseUtil;
-import com.util.ValidationErrorMessage;
+import com.common.ResponseUtil;
+import com.common.ValidationErrorMessage;
 
 /**
  * @author virens

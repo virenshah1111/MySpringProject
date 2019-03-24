@@ -1,5 +1,4 @@
-const url = "http://localhost:9090/MySpringProject/todo";
-
+const url = "/MySpringProject/todos";
 angular.module('myApp').
 	service('toDoService', function ($http, $q) {
 
